@@ -1,0 +1,13 @@
+body{
+    background-color: #eee;
+}
+
+.logo{
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.centro {
+    vertical-align: middle !important;
+    text-align: center !important;
+}
