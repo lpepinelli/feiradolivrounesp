@@ -17,7 +17,7 @@ var index = {
     },
 
     carregaJSON: function() {
-        fetch("./tst.json")
+        fetch("./books.json")
             .then(res => res.json())
             .then(function (obj) {
                 index.preencheTabela(obj.data);
@@ -40,9 +40,9 @@ var index = {
             case "genero":
                 list = index.lista.filter(el => el.Genero.toLowerCase().indexOf(value.toLowerCase()) > -1);
                 break;
-            /*case "editora":
-                list = index.lista.filter(el => el.Editora.nomefantasia.toLowerCase().indexOf(value.toLowerCase()) > -1);
-                break;*/
+            case "editora":
+                list = index.lista.filter(el => el.Editora.toLowerCase().indexOf(value.toLowerCase()) > -1);
+                break;
         }
 
         index.preencheTabela(list);
@@ -53,11 +53,11 @@ var index = {
         for(var i=0; i<dados.length; i++){
             tr+="<tr>" +
             "<td>" + dados[i].Titulo + "</td>" +
-            "<td>" + dados[i].Autor.substring(0, 20) + "</td>" +
+            "<td>" + dados[i].Autor + "</td>" +
             "<td>" + dados[i].Genero + "</td>" +
             "<td>" + dados[i].Preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "</td>" +
             "<td>" + dados[i].Preco_Feira.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "</td>" +
-            "<td>Logo da Editora</td>" +
+            "<td><a href='"+ dados[i].Loja +"' target=\"_blank\"><img src='"+ dados[i].Logo +"' alt='"+dados[i].Editora+"' class=\"logo_editora\"></a></td>" +
             "</tr>";
         }
         document.getElementById("bodytable").innerHTML = tr;
