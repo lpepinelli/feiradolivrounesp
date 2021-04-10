@@ -57,7 +57,7 @@ var index = {
             "<td>" + dados[i].Genero + "</td>" +
             "<td>" + dados[i].Preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "</td>" +
             "<td>" + dados[i].Preco_Feira.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "</td>" +
-            "<td><a href='"+ dados[i].Loja +"' target=\"_blank\"><img src='"+ dados[i].Logo +"' alt='"+dados[i].Editora+"' class=\"logo_editora\"></a></td>" +
+            "<td><a href='"+ dados[i].Loja +"' target=\"_blank\"><img src='"+ dados[i].Logo +"' alt='"+dados[i].Editora+"' title='" +dados[i].Editora+ "' class=\"logo_editora\"></a></td>" +
             "</tr>";
         }
         document.getElementById("bodytable").innerHTML = tr;
