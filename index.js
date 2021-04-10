@@ -1,18 +1,22 @@
-index={
+var index = {
     lista: [],
 
-    init: function(){
-        index.carregaJSON();
+    init: function() {
+
         document.getElementById("btnSearch").onclick = index.buscar;
+
         document.getElementById("search_value").addEventListener("keyup", function (event) {
             // Number 13 is the "Enter" key on the keyboard
             if (event.key === 'Enter') {
                 event.preventDefault();
-                index.buscar();
+                document.getElementById("btnSearch").click();
             }
         });
+        
+        index.carregaJSON();
     },
-    carregaJSON: function(){
+
+    carregaJSON: function() {
         fetch("./tst.json")
             .then(res => res.json())
             .then(function (obj) {
@@ -44,7 +48,7 @@ index={
         index.preencheTabela(list);
     },
 
-    preencheTabela: function(dados){
+    preencheTabela: function(dados) {
         var tr="";
         for(var i=0; i<dados.length; i++){
             tr+="<tr>" +
