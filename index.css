@@ -12,6 +12,10 @@ body{
     border-radius: 10px;
 }
 
+.githublogo{
+    max-width: 100px;
+}
+
 .centro {
     vertical-align: middle !important;
     text-align: center !important;
