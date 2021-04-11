@@ -20,3 +20,10 @@ body{
     vertical-align: middle !important;
     text-align: center !important;
 }
+
+@media (max-width: 600px)
+{
+  #repo{
+      margin-left: 15rem;
+  }
+}
